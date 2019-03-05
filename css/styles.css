@@ -42,6 +42,8 @@ h3, h4 {
 
 .color-orange {
   color: #ffb53e; }
+  .color-green {
+    color: #38b949; }
 
 .color-red {
   color: #f9243f; }
@@ -387,6 +389,11 @@ a.label:hover, a.label:focus {
 .panel-red {
   background: #f9243f;
   color: #fff; }
+
+.panel-green {
+  background: #2da44b;
+  color: #fff;
+}
 
 .dark-overlay {
   background: rgba(0, 0, 0, 0.05); }
@@ -1025,7 +1032,7 @@ h1.page-header {
 
 .fixed-table-pagination .pagination-detail {
   margin-top: 20px; }
-  
+
 p.back-link {
   text-align: center;
   margin-bottom: 20px;

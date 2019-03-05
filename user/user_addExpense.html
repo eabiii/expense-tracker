@@ -16,6 +16,8 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -26,7 +28,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+				<a class="navbar-brand" href="#">Expense</a>
 
 			</div>
 		</div><!-- /.container-fluid -->
@@ -45,7 +47,7 @@
 		<div class="divider"></div>
 
 		<ul class="nav menu">
-			<li class="parent"><a href="user_dashboard.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+			<li class="parent"><a href="user_dashboard.html"><em class="fa fa-tachometer-alt">&nbsp;</em> Dashboard</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 					<em class="fa fa-navicon">&nbsp;</em> Expense <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
@@ -53,7 +55,7 @@
 					<li><a class="" href="user_addExpense.html">
 							<span class="fa fa-arrow-right">&nbsp;</span> Add Expense
 						</a></li>
-					<li><a class="" href="#">
+					<li><a class="" href="user_viewExpense.html">
 							<span class="fa fa-arrow-right">&nbsp;</span> View Expense
 						</a></li>
 				</ul>
@@ -80,14 +82,17 @@
 			</div>
 		</div>
 		<!--/.row-->
-
 		<!--/.row-->
 
 		<div class="panel panel-default">
 			<div class="panel-heading">Forms</div>
+			<div hidden id="message" class="alert alert-success alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+  </div>
 			<div class="panel-body">
 				<div class="col-md-8">
-					<form role="form">
+					<form>
 						<div class="form-group">
 							<label>Category</label>
 							<select class="form-control">
@@ -113,14 +118,12 @@
 
 
 
-					<button type="submit" class="btn btn-primary">Submit Button</button>
+					<button type="button" id="submit" class="btn btn-primary">Submit</button>
 					<button type="reset" class="btn btn-default">Reset Button</button>
 				</div>
 				</form>
 			</div>
 		</div>
-
-
 	</div>
 	<!--/.main-->
 
@@ -132,17 +135,37 @@
 	<script src="../js/easypiechart-data.js"></script>
 	<script src="../js/bootstrap-datepicker.js"></script>
 	<script src="../js/custom.js"></script>
-	<script>
-		window.onload = function() {
-			var chart1 = document.getElementById("line-chart").getContext("2d");
-			window.myLine = new Chart(chart1).Line(lineChartData, {
-				responsive: true,
-				scaleLineColor: "rgba(0,0,0,.2)",
-				scaleGridLineColor: "rgba(0,0,0,.05)",
-				scaleFontColor: "#c5c7cc"
-			});
-		};
-	</script>
+<script>
+
+$(document).ready(function() {
+	/*
+  $('#submit').click(function(event){
+    event.preventDefault();
+  $.ajax({
+    url: "test.php",
+    method: "post",
+    data: $('form').serialize(),
+    dataType: "text",
+    success: function(message){
+      $("#modal_accept").modal("show");
+      $('#addForm').trigger("reset");
+    },
+    error: function(message){
+
+    }
+
+  })
+})
+*/
+$('#submit').click(function(){
+	console.log("i ame here");
+	document.getElementById("message").hidden = false;
+})
+
+
+});
+
+</script>
 
 </body>
 
